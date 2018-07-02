@@ -10,6 +10,19 @@
   </head>
 
   <body>
+
+    <nav>
+  <% if !teacher_signed_in? %>
+    <%= link_to "Teacher Sign up", new_teacher_registration_path %>
+    <%= link_to "Teacher Sign in", new_teacher_session_path %>
+  <% end %>
+  <% if teacher_signed_in? %>
+    <%= link_to "Teacher Sign out", destroy_teacher_session_path, method: :delete %>
+  <% end %>
+</nav>
+
     <%= yield %>
   </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </html>
