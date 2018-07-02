@@ -1,0 +1,9 @@
+<% if current_teacher%>
+  <h1>Welcome Teacher:  <%= current_teacher.email %></h1>
+<% end %>
+
+<% if current_student %>
+  <h1>Welcome  Student: <%= current_student.email %></h1>
+<% end %>
+
+<p>Find me in app/views/welcome/index.html.erb</p>

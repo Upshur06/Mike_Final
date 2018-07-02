@@ -70,4 +70,12 @@ class Students::RegistrationsController < Devise::RegistrationsController
       params.require(:student).permit(:first_name, :last_name, :user_name, :email, :password, :password_confirmation)
   end
 
+  def after_sign_up_path_for(resource)
+  "/welcome/index"
+end
+
+def after_inactive_sign_up_path_for(resource)
+  "/"
+end
+
 end
