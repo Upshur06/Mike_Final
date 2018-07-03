@@ -1,0 +1,50 @@
+<h1>Test#new</h1>
+<p>Find me in app/views/test/new.html.erb</p>
+
+<%= form_for test_new_path do |f| %>
+<div class="subject">
+Subject: <%= text_field_tag :subject %>
+</div>
+<div class="gradeLevel">
+Grade Level: <%= text_field_tag :grade_level %>
+</div>
+<div class="teacher">
+Teacher: <%= text_field_tag :teacher %>
+<div class="teacher"><br>
+
+<div class="question">
+Question: <%= text_field_tag :question %>
+<div class="teacher">
+
+<div class="answers">
+<%= radio_button_tag(:answer1, "a") %>
+<%= text_field_tag :answer1_a %>
+</div>
+<div class="answers">
+<%= radio_button_tag(:answer2, "b") %>
+<%= text_field_tag :answer2_b  %>
+<div class="answers">
+<%= radio_button_tag(:answer3, "c") %>
+<%= text_field_tag :answer3_c %>
+</div>
+<div class="answers">
+<%= radio_button_tag(:answer4, "d") %>
+<%= text_field_tag :answer4_d  %>
+</div>
+  <p>
+    <%= f.submit("Get my results!") %>
+  </p>
+<% end %>
+
+
+<!-- <div class="btn-group-vertical clearfix form-group" data-toggle="buttons">
+        <label class="btn btn-primary text-left">
+          <input name="options" id="option1" type="radio" onclick="multiChoiceClick(1, 1)">A. Always. I'm the leader and should have the final say
+        </label>
+        <label class="btn btn-primary text-left">
+          <input name="options" id="option2" type="radio">B. Sometimes, but I think the group should make decisions if possible
+        </label>
+        <label class="btn btn-primary text-left">
+          <input name="options" id="option3" type="radio">C. I generally don't get involved. The group can make their own decisions without my help
+        </label>
+</div> -->

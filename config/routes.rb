@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'test/index'
+  get 'test/new'
+  get 'test/show'
+  get 'test/edit'
   devise_for :students, :controllers => {registrations: "students/registrations"}
   devise_for :teachers, :controllers => {registrations: "teachers/registrations"}
 
