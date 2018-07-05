@@ -1,9 +1,14 @@
 <% if current_teacher%>
   <h1>Welcome Teacher:  <%= current_teacher.email %></h1>
+
+
+
+<a href="/tests/new">Create Test</a>
 <% end %>
 
 <% if current_student %>
   <h1>Welcome  Student: <%= current_student.email %></h1>
-<% end %>
 
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+  <%= link_to "Link", tests_path %>
+<% end %>

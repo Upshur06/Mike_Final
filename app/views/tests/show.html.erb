@@ -1,0 +1,29 @@
+<h1>Tests#show</h1>
+<p>Find me in app/views/tests/show.html.erb</p>
+
+
+  Subject: <%= @test.subject %><br>
+
+  Grade Level: <%= @test.grade_level %><br>
+
+  Teacher: <%= @test.teacher_name %><br>
+
+
+  <br>Ouestion:<%= @test.question %><br>
+
+  <%= radio_button_tag(:answer1, "a") %>
+  <%= @test.answer1 %><br>
+
+  <%= radio_button_tag(:answer2, "b") %>
+  <%= @test.answer2 %><br>
+
+  <%= radio_button_tag(:answer3, "c") %>
+  <%= @test.answer3 %><br>
+
+  <%= radio_button_tag(:answer4, "d") %>
+  <%= @test.answer4 %><br>
+
+  <br><div class="answer">
+  Correct Answer: <%= @test.correct_answer %>
+</div>
+  <br><%= link_to "Finish", welcome_index_path, class: 'button' %>
