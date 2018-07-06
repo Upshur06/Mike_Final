@@ -1,3 +1,4 @@
+<% if current_teacher%>
 <h1>Tests#show</h1>
 <p>Find me in app/views/tests/show.html.erb</p>
 
@@ -27,3 +28,41 @@
   Correct Answer: <%= @test.correct_answer %>
 </div>
   <br><%= link_to "Finish", welcome_index_path, class: 'button' %>
+  <br><%= link_to "Edit", edit_test_path, class: 'button' %>
+
+<% end %>
+
+
+  <% if current_student %>
+  <h1>Tests#show</h1>
+  <p>Find me in app/views/tests/show.html.erb</p>
+
+
+    Subject: <%= @test.subject %><br>
+
+    Grade Level: <%= @test.grade_level %><br>
+
+    Teacher: <%= @test.teacher_name %><br>
+
+
+    <br>Ouestion:<%= @test.question %><br>
+
+<%= form_tag("/guess", method: :post) do %>
+    <%= radio_button_tag :answer, @test.answer1 %> <%= @test.answer1 %><br>
+
+    <%= radio_button_tag :answer, @test.answer2 %> <%= @test.answer2 %><br>
+
+    <%= radio_button_tag :answer, @test.answer3 %> <%= @test.answer3 %><br>
+
+    <%= radio_button_tag :answer, @test.answer4 %>  <%= @test.answer4 %><br>
+
+    <%= hidden_field_tag :correct_answer, @test.correct_answer %>
+    <%= hidden_field_tag :test_id, @test.id %>
+    <%= submit_tag "Guess" %>
+<% end %>
+
+
+
+    <br><%= link_to "Finish", finish_path, class: 'button' %>
+
+  <% end %>

@@ -1,0 +1,11 @@
+<h1>Scores#index</h1>
+<p>Find me in app/views/scores/index.html.erb</p>
+
+<%@scores.each do |s|%>
+Result: <%=s.result%>
+<br>Student ID: <%=s.student_id%>
+<br>Test ID: <%=s.test_id%>
+<br>
+  <div><a href="/scores/<%=s.id %>/">Check Results</a></div>
+<br>
+<%end%>

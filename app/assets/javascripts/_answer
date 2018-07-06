@@ -1,0 +1,17 @@
+
+
+
+
+
+
+if @test.answer1 == @test.correct_answer)
+  result = 1 out of 1
+  else
+  result = 0 out of 1
+<% if @test.answer1 == @test.correct_answer %>
+
+<% if @test.answer2 == @test.correct_answer %>
+
+<% if @test.answer3 == @test.correct_answer %>
+
+<% if @test.answer4 == @test.correct_answer %>

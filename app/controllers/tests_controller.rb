@@ -15,13 +15,25 @@ class TestsController < ApplicationController
     flash[:success] = "test has been created"
     else
     render "/tests/new"
-    flash[:notice] = "try again"
+    flash[:error] = "try again"
     end
   end
 
   def show
     @test = Test.find(params[:id])
   end
+
+  def guess
+    if(params[:answer] == params[:correct_answer])
+      redirect_to test_path(params[:test_id])
+      flash[:success] = "Correct"
+      puts 'correct'
+    else
+      redirect_to test_path(params[:test_id])
+      flash[:error] = "Incorrect"
+      puts 'incorrect'
+    end
+end
 
   def edit
     @test = Test.find(params[:id])
@@ -34,6 +46,10 @@ class TestsController < ApplicationController
     else
       render test_edit_path
     end
+  end
+
+  def finish
+    @finish = "finish"
   end
 
   def destroy
