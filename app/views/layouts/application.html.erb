@@ -11,25 +11,44 @@
 
   <body>
     <nav>
+
+  <div class="navbar">
+
+<div class="logo"><%= image_tag("logo.jpg", :size => '130x75') %></div>
+
+    <div class="homeButton">
     <%= link_to "Home Page", root_path %>
+  </div>
   <% if !teacher_signed_in? %>
+  <div class="teacherSignUp">
     <%= link_to "Teacher Sign up", new_teacher_registration_path %>
+  </div>
+  <div class="teacherSignIn">
     <%= link_to "Teacher Sign in", new_teacher_session_path %>
+  </div>
   <% end %>
   <% if teacher_signed_in? %>
+  <div class="teacherSignOut">
     <%= link_to "Teacher Sign out", destroy_teacher_session_path, method: :delete %>
+  </div>
   <% end %>
 
   <% if !student_signed_in? %>
+  <div class="studentSignUp">
     <%= link_to "Student Sign up", new_student_registration_path %>
+  </div>
+  <div class="studentSignIn">
     <%= link_to "Student Sign in", new_student_session_path %>
+  </div>
   <% end %>
   <% if student_signed_in? %>
-
+<div class="studentSignOut">
     <%= link_to "Student Sign out", destroy_student_session_path, method: :delete %>
+</div>
   <% end %>
-  <hr>
+</div>
 </nav>
+<hr>
 
 <% flash.each do |name, message| %>
    <div class="<%= name %>"><%= message %></div>
