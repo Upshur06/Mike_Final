@@ -1,4 +1,8 @@
 <h1>Tests#finish</h1>
 <p>Find me in app/views/tests/finish.html.erb</p>
 
-<h1>Thank You <%= current_student.email %> for completeing your Test</h1>
+<h2>Thank You <%= current_student.email %> for completeing your Test</h2>
+
+<h3>View Your Score</h3>
+<%= link_to "result link", scores_path %>
+<br><%= link_to "Welcome Page", welcome_index_path %>

@@ -1,0 +1,16 @@
+<h1>scores#new</h1>
+<p>Find me in app/views/scores/new.html.erb</p>
+
+
+<%= form_for Score.new do |f| %>
+<div class="result">
+  Result: <%= f.text_field :result %>
+</div>
+  <div class="studentId">
+  Student ID: <%= f.text_field :student_id %>
+</div>
+  <div class="testId">
+  Test ID: <%= f.text_field :test_id %>
+</div>
+<%= f.submit "Enter" %>
+<% end %>

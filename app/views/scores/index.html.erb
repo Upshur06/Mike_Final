@@ -1,6 +1,10 @@
 <h1>Scores#index</h1>
 <p>Find me in app/views/scores/index.html.erb</p>
 
+<% if current_teacher%>
+  <h1>Teacher: <%= current_teacher.email %></h1>
+  <p>Find your students results</p>
+
 <%@scores.each do |s|%>
 Result: <%=s.result%>
 <br>Student ID: <%=s.student_id%>
@@ -9,3 +13,31 @@ Result: <%=s.result%>
   <div><a href="/scores/<%=s.id %>/">Check Results</a></div>
 <br>
 <%end%>
+
+
+
+
+
+<%= link_to "Welcome Page", welcome_index_path %>
+
+<% end %>
+
+<% if current_student %>
+  <h1>Student: <%= current_student.email %></h1>
+  <p>Find your results</p>
+
+<%@scores.each do |s|%>
+Result: <%=s.result%>
+<br>Student ID: <%=s.student_id%>
+<br>Test ID: <%=s.test_id%>
+<br>
+  <div><a href="/scores/<%=s.id %>/">Check Results</a></div>
+<br>
+<%end%>
+
+
+
+
+
+<%= link_to "Welcome Page", welcome_index_path %>
+<% end %>
