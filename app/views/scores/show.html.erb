@@ -1,0 +1,14 @@
+<h1>Test Scores</h1>
+<p>The following are the results from your test</p>
+
+
+
+Result: <%= @score.result %><br>
+
+<%= hidden_field_tag @score.student_id %><br>
+
+<%= hidden_field_tag @score.test_id %><br>
+
+
+<br><p>You may Sign Out now or click the back button to view other test results</p>
+<%= link_to "Back", scores_path %>

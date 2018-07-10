@@ -1,0 +1,33 @@
+.answer{
+  width: 140px;
+  border: 2px solid blue;
+  text-align: center;
+  // visibility: hidden;
+}
+
+.known{
+  width: 500px;
+  height: 250px;
+  border: 4px double green;
+  position: relative;
+  left: 400px;
+  bottom: 200px;
+}
+
+.box{
+  width: 1135px;
+  height: 250px;
+  background-color: green;
+  margin-top: 180px;
+  border: 2px solid;
+}
+
+.script{
+
+  font-size: 35px;
+  color: white;
+  position: absolute;
+  top: 735px;
+  left: 245px;
+
+}

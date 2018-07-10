@@ -1,0 +1,37 @@
+
+<% if current_teacher%>
+<h1>List of Created Tests</h1>
+<p>Find created test under your name name</p>
+
+
+<%@tests.each do |t|%>
+Teacher Name: <%=t.teacher_name%>
+<br>Subject: <%=t.subject%>
+<br>Grade Level: <%=t.grade_level%>
+<br>
+
+<% if t.teacher_id == current_teacher.id %>
+  <div><a href="/tests/<%=t.id %>/">Edit Test</a></div>
+<% end %>
+<br>
+<%end%>
+<br><%= link_to "Welcome Page", welcome_index_path %>
+<br><%= link_to "Create Test", new_test_path %>
+<br><%= link_to "Student Results", scores_path %>
+  <%end%>
+
+  <% if current_student %>
+  <h1>List of Created Tests</h1>
+  <p>Find your teacher, subject, and grade level; then select your test</p>
+
+
+  <%@tests.each do |t|%>
+  Teacher Name: <%=t.teacher_name%>
+  <br>Subject: <%=t.subject%>
+  <br>Grade Level: <%=t.grade_level%>
+  <br>
+    <div><a href="/tests/<%=t.id %>/">Take Test</a></div>
+  <br>
+  <%end%>
+<%= link_to "Welcome Page", welcome_index_path %>
+    <%end%>

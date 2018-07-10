@@ -1,0 +1,41 @@
+<h1>Edit Test</h1>
+<p>Fill out the following</p>
+
+<%= form_for Test.new do |f| %>
+<div class="subject">
+  Subject: <%= f.text_field :subject %>
+</div>
+  <div class="gradeLevel">
+  Grade Level: <%= f.text_field :grade_level %>
+</div>
+  <div class="teacherName">
+  Teacher: <%= f.text_field :teacher_name %>
+</div>
+ <%= hidden_field_tag f.text_field :teacher_id %>
+  <br><div class="question">
+  Ouestion:<%= f.text_field :question %>
+</div>
+  <div class="answers">
+    <%= radio_button_tag(:answer1, "a") %>
+    <%= f.text_field (:answer1) %>
+</div>
+  <div class="answers">
+    <%= radio_button_tag(:answer2, "b") %>
+    <%= f.text_field (:answer2) %>
+</div>
+  <div class="answers">
+    <%= radio_button_tag(:answer3, "c") %>
+    <%= f.text_field (:answer3) %>
+</div>
+  <div class="answers">
+    <%= radio_button_tag(:answer4, "d") %>
+    <%= f.text_field (:answer4) %>
+</div>
+  <div class="correctAnswer">
+  Correct Answer: <%= f.text_field :correct_answer %>
+</div>
+  <%= f.submit "Edit Test" %>
+<% end %>
+
+<%= link_to "Delete", test_path, method: :delete %>
+<br><%= link_to "Back", test_path, class: 'button' %>
