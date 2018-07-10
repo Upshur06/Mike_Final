@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :scores
 
   get "test/finish" => "tests#finish", as: "finish"
-  post "/guess" => "tests#guess"
+  post "/guess" => "scores#guess", as: "guess"
   get 'welcome/index'
+  get 'about/show'
+  get 'about/index'
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

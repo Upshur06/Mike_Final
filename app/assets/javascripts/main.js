@@ -1,1 +1,1 @@
-@import 'answer'
+@import 'slideshow';

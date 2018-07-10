@@ -12,13 +12,17 @@
   <body>
     <nav>
 
-  <div class="navbar">
+  <div class="navbox">
 
-<div class="logo"><%= image_tag("logo.jpg", :size => '130x75') %></div>
+<div class="logo"><%= image_tag("logo.jpg", :size => '155x90') %></div>
 
+<div class="navbar">
     <div class="homeButton">
     <%= link_to "Home Page", root_path %>
   </div>
+  <div class="aboutButton">
+  <%= link_to "About Page", about_index_path %>
+</div>
   <% if !teacher_signed_in? %>
   <div class="teacherSignUp">
     <%= link_to "Teacher Sign up", new_teacher_registration_path %>
@@ -46,9 +50,14 @@
     <%= link_to "Student Sign out", destroy_student_session_path, method: :delete %>
 </div>
   <% end %>
+  </div>
 </div>
 </nav>
 <hr>
+<% if current_teacher %>
+<%= current_teacher.user_name %>
+<%= current_teacher.id %>
+<% end %>
 
 <% flash.each do |name, message| %>
    <div class="<%= name %>"><%= message %></div>

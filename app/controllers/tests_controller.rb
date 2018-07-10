@@ -23,17 +23,6 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def guess
-    if(params[:answer] == params[:correct_answer])
-      redirect_to test_path(params[:test_id])
-      flash[:success] = "Correct"
-      puts 'correct'
-    else
-      redirect_to test_path(params[:test_id])
-      flash[:error] = "Incorrect"
-      puts 'incorrect'
-    end
-end
 
   def edit
     @test = Test.find(params[:id])
