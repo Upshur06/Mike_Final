@@ -1,8 +1,36 @@
+.holder{
+
+  border: 3px solid;
+  width: 970px;
+  height: 350px;
+  margin-left: 50px;
+  background-color: white;
+}
+
 .qoute{
   margin-left: 120px;
+
 }
 
 .pics{
   margin-left: 10px;
   margin-top: 50px;
+}
+
+.hands{
+ opacity: 0.3;
+ margin-left: 250px;
+}
+
+.script{
+  position: absolute;
+  left: 195px;
+  top: 830px;
+  color: white;
+  font-size: 35px;
+}
+
+
+h1{
+  font-family: Arial;
 }
