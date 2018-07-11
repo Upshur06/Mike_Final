@@ -3,19 +3,23 @@
   <h1>Teacher: <%= current_teacher.user_name %></h1>
   <p>Find your student's test results</p>
 
+<div class="scoreList">
+  <div class="scoreholder">
 <% @scores.each do |s|%>
 Result <%= hidden_field_tag s.result%>
 <br>Student Username: <%=s.student.user_name %>
 <br>
   <div><a href="/scores/<%= s.id %>/">Check Results</a></div>
 <br>
+<hr>
 <%end%>
+  </div>
+</div>
 
 
 
 
-
-<%= link_to "Welcome Page", welcome_index_path %>
+<br><%= link_to "Welcome Page", welcome_index_path %>
 <br><%= link_to "Create Test", new_test_path %>
 
 <% end %>
@@ -24,20 +28,25 @@ Result <%= hidden_field_tag s.result%>
   <h1>Thank you for completing your test, Student: <%= current_student.user_name %></h1>
   <p>Find your results</p>
 
+<div class="scoreStudentList">
+  <div class="scoreStudentHolder">
 <%@scores.each do |s|%>
 Result <%=hidden_field_tag s.result%>
 <br>Student Username: <%= s.student.user_name %>
 <br>
 <% if s.student_id === current_student.id %>
   <div><a href="/scores/<%=s.id %>/">Check Results</a></div>
+  <br>
   <% end %>
 <br>
+<hr>
 <%end%>
-
+  </div>
+</div>
 
 
 
 <br><p>You may Sign Out now or click the Take Test button to continue testing</p>
-<%= link_to "Take Test", tests_path %>
+<br><%= link_to "Take Test", tests_path %>
 <br><%= link_to "Welcome Page", welcome_index_path %>
 <% end %>

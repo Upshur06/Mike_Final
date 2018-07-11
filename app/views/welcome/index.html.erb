@@ -1,13 +1,16 @@
 <% if current_teacher%>
   <h1>Welcome Teacher:  <%= current_teacher.user_name %></h1>
   <p>Don't forget to Logout when you have finished</p>
+  <div class="intro">
+    <div class="introPart">
   <h3>Instructions: </h3>
-  <p> To create an online test, select: Create Test<br>
-      To view the online test that was created, select: Test Link<br>
-      To view your students results after they have completed the online test, select: Student Results
+  <p> - To create an online test, select: Create Test<br><br>
+      - To view the online test that was created, select: Test Link<br><br>
+      - To view your students results after they have completed the online test, select: Student Results
    </p>
-
-<a href="/tests/new">Create Test</a>
+    </div>
+  </div>
+<br><a href="/tests/new">Create Test</a>
 <%= link_to "Test Link", tests_path %>
 <%= link_to "Student Results", scores_path %>
 <% end %>
@@ -15,7 +18,10 @@
 <% if current_student %>
   <h1>Welcome  Student: <%= current_student.user_name %></h1>
   <p>Don't forget to Logout when you have finished</p>
+  <div class="introStudent">
+    <div class="introPartStudent">
   <p>Click the link below to take you to your test page</p>
-
-  <%= link_to "Link", tests_path %>
+  </div>
+</div>
+  <br><%= link_to "Link", tests_path %>
 <% end %>

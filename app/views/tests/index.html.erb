@@ -3,7 +3,8 @@
 <h1>List of Created Tests</h1>
 <p>Find created test under your name name</p>
 
-
+<div class="testTeacher">
+  <div class="testShowTeacher">
 <%@tests.each do |t|%>
 Teacher Name: <%=t.teacher_name%>
 <br>Subject: <%=t.subject%>
@@ -15,6 +16,8 @@ Teacher Name: <%=t.teacher_name%>
 <% end %>
 <br>
 <%end%>
+  </div>
+</div>
 <br><%= link_to "Welcome Page", welcome_index_path %>
 <br><%= link_to "Create Test", new_test_path %>
 <br><%= link_to "Student Results", scores_path %>
@@ -24,7 +27,8 @@ Teacher Name: <%=t.teacher_name%>
   <h1>List of Created Tests</h1>
   <p>Find your teacher, subject, and grade level; then select your test</p>
 
-
+<div class="test">
+  <div class="testShow">
   <%@tests.each do |t|%>
   Teacher Name: <%=t.teacher_name%>
   <br>Subject: <%=t.subject%>
@@ -32,6 +36,9 @@ Teacher Name: <%=t.teacher_name%>
   <br>
     <div><a href="/tests/<%=t.id %>/">Take Test</a></div>
   <br>
+    <hr>
   <%end%>
-<%= link_to "Welcome Page", welcome_index_path %>
+  </div>
+</div>
+<br><%= link_to "Welcome Page", welcome_index_path %>
     <%end%>
