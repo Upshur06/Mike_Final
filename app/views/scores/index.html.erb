@@ -7,6 +7,7 @@
   <div class="scoreholder">
 <% @scores.each do |s|%>
 Result <%= hidden_field_tag s.result%>
+<br>Teacher: <%=s.test.teacher_name %>
 <br>Student Username: <%=s.student.user_name %>
 <br>
   <div><a href="/scores/<%= s.id %>/">Check Results</a></div>
@@ -33,6 +34,7 @@ Result <%= hidden_field_tag s.result%>
 <%@scores.each do |s|%>
 Result <%=hidden_field_tag s.result%>
 <br>Student Username: <%= s.student.user_name %>
+<br>Teacher: <%=s.test.teacher_name %>
 <br>
 <% if s.student_id === current_student.id %>
   <div><a href="/scores/<%=s.id %>/">Check Results</a></div>
